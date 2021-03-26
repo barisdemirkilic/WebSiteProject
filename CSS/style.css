@@ -1,0 +1,55 @@
+:root {
+  --darkBlueColor: rgb(30, 30, 40); /* #1E1E28 */
+}
+
+.darkMode {
+  background-color: var(--darkBlueColor);
+  color: white;
+  border-color: white;
+}
+
+.lightMode {
+  background-color: white;
+  color: var(--darkBlueColor);
+  border-color: var(--darkBlueColor);
+}
+
+h1 {
+  text-align: center;
+}
+
+.navigationBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.navigationBar li {
+  display: inline-block;
+  padding-right: 10px;
+  border-right: 1px solid;
+}
+
+.navigationBar li:hover {
+  background-clip: content-box; /* To prevent background-color setting for padding */
+  background-color: blue;
+}
+
+.navigationBar li:last-child {
+  border-right: none;
+  padding-right: none;
+}
+
+.navigationBar li a {
+  text-decoration: none;
+}
+
+.anchorDarkMode {
+  color: white;
+}
+
+.anchorLightMode {
+  color: var(--darkBlueColor);
+}

@@ -1,0 +1,47 @@
+/* Based on this tutorial -> https://dev.to/dcodeyt/creating-a-css-only-toggle-switch-5cg3 */
+
+:root {
+  --darkBlueColor: rgb(30, 30, 40); /* #1E1E28 */
+}
+
+.toggleContainerLabel {
+    --width: 30px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.toggleCheckbox {
+    display: none;
+}
+
+.toggleShape {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: white;
+    transition: background 0.2s;
+}
+
+.toggleShape::after {
+    content: "";
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    height: calc(var(--height) - 3px);
+    width: calc(var(--height) - 3px);
+    background-color: var(--darkBlueColor);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+}
+
+.toggleCheckbox:checked ~ .toggleShape {
+    background-color: var(--darkBlueColor);
+}
+
+.toggleCheckbox:checked ~ .toggleShape::after {
+    transform: translateX(var(--height));
+    background-color: white;
+}
